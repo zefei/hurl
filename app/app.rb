@@ -179,7 +179,7 @@ module Hurl
              :prev_hurl => @user ? @user.second_to_last_hurl_id : nil,
              :view_id   => save_view(header, body, request)
       rescue => e
-        json :error => e.to_s
+        json :error => CGI::escapeHTML(e.to_s)
       end
     end
 

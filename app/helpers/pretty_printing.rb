@@ -14,7 +14,7 @@ module Hurl
         elsif type.include? 'html'
           colorize :html => content
         else
-          content.inspect
+          CGI::escapeHTML(content.inspect)
         end
       end
 
