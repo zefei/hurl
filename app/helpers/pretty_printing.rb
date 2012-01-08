@@ -35,6 +35,7 @@ module Hurl
       end
 
       def pretty_print_headers(content)
+        content = CGI::escapeHTML(content)
         lines = content.split("\n").map do |line|
           if line =~ /^(.+?):(.+)$/
             "<span class='nt'>#{$1}</span>:<span class='s'>#{$2}</span>"
