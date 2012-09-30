@@ -27,11 +27,6 @@ namespace :hurl do
       abort "dirty index - not publishing!"
     end
   end
-
-  desc "Please pardon our dust."
-  task :deploy do
-    exec "ssh deploy@hurl.it 'cd /www/hurl && git fetch origin && git reset --hard origin/master && rake bundle && touch tmp/restart.txt'"
-  end
 end
 
 # Needs bundler, uglifyjs, and uglifycss installed on the server.
